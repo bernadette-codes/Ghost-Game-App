@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+    position: relative;
+    min-height: 95%;
+}
+
+body {
+    display: block;
+    background: url(background.jpg) center center / cover no-repeat fixed;
+    padding: 0;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:5px !important; padding-bottom:0 !important;
+    height: 32px;
+}
+
+.navbar {
+    min-height:32px !important;
+}
+
+section {
+    padding-bottom: 0;
+    margin: 0 0 10px;
+}
+
+a {
+    font-size: 1.25em !important;
+    color: #fff !important;
+    background-color: #404040 !important;
+    margin: 5px !important;
+    padding: 8px  !important;
+    border-radius: 7px;
+    border: 1px solid #404040;
+}
+
+a:hover {
+    color: #404040 !important;
+    background-color: #fff !important;
+}
+
+.titleFont {
+    font-size: 2.2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.messageFont {
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#startButton {
+    cursor:pointer !important;
+    border-radius: 15px;
+    border: 1px solid #c5c5c5;
+    box-shadow: 2px 2px 2px #c5c5c5, -2px -2px 2px #c5c5c5;
+}
+
+#area {
+    cursor: crosshair;
+}
+
+#ghost {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0.7;
+}
+
+#ghostFinal {
+    position: absolute;
+    bottom: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 550px) {
+    .titleFont {
+        font-size: 2em;
+    }
+    .messageFont {
+        font-size: 1em !important;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    a {
+        font-size: 1em !important;
+    }
+    .titleFont {
+        font-size: 1.8em;
+    }
+
+}
