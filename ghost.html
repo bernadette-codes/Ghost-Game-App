@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Bernadette Engleman">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Find the Ghost Game</title>
+</head>
+
+<body>
+
+<!-- Home -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.bernadetteengleman.com/">Home</a>
+            <a class="navbar-brand" href="ghost.html">Reset</a>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="container" id="area">
+        <h1 class="text-left titleFont">Find the Ghost Game</h1>
+        <p class="text-left messageFont">Click the ghost when it appears.</p>
+
+        <!-- Start Button -->
+        <p style="text-align:center;"><img src="start.png" alt="START" style="width:80px" onclick="start()" id="startButton"></p>
+
+        <!-- Ghost -->
+        <p><img src="Ghost1.png" alt="Ghost" style="width:30px" onclick="onClick()" id="ghost"></p>
+
+        <!-- Ghost Final -->
+        <p><img src="ghostface.png" alt="Ghost" style="height: 80%;" id="ghostFinal"></p>
+
+
+    </div>
+</section>
+
+<footer class="container-fluid text-center">
+    <p>Copyright © <span id="year"></span> Bernadette Engleman. All rights reserved.</p>
+</footer>
+
+<script type="text/javascript" src="ghost.js"></script>
+
+</body>
+
+</html>
+
