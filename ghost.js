@@ -1,9 +1,10 @@
 /**
- * Created by Bernadette on 3/7/2016.
+ * Created by Bernadette on 3/26/2016.
  */
+
 // Copyright Year
-var d = new Date();
-var n = d.getFullYear();
+var d = new Date(),
+    n = d.getFullYear();
 document.getElementById("year").innerHTML = n;
 
 // Declare ghost
@@ -13,8 +14,9 @@ var loc = document.getElementById("ghost");
 // Get Ghost Location
 function newLoc() {
     //Get Top
-    var windowHeight=$(window).height();
-    var y = Math.floor((Math.random() * windowHeight) + 1);
+    var windowHeight=$(window).height(),
+        y = Math.floor((Math.random() * windowHeight) + 1);
+
     if (y <= 150){
         heightLoc=y+151;
     } else if (y >= windowHeight-150) {
@@ -24,8 +26,8 @@ function newLoc() {
     }
 
     //Get Left
-    var windowWidth=$(window).width();
-    var x = Math.floor((Math.random() * windowWidth) + 1);
+    var windowWidth=$(window).width(),
+        x = Math.floor((Math.random() * windowWidth) + 1);
     if (x <= 150){
         widthLoc=x+151;
     } else if (x >= windowWidth-150) {
