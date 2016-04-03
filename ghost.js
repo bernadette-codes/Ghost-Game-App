@@ -1,5 +1,5 @@
 /**
- * Created by Bernadette on 3/26/2016.
+ * Created by Bernadette on 2/8/2016.
  */
 
 // Copyright Year
@@ -10,13 +10,14 @@ document.getElementById("year").innerHTML = n;
 // Declare ghost
 var loc = document.getElementById("ghost");
 
-
 // Get Ghost Location
 function newLoc() {
-    //Get Top
     var windowHeight=$(window).height(),
-        y = Math.floor((Math.random() * windowHeight) + 1);
+        y = Math.floor((Math.random() * windowHeight) + 1),
+        windowWidth=$(window).width(),
+        x = Math.floor((Math.random() * windowWidth) + 1);
 
+    //Get Top
     if (y <= 150){
         heightLoc=y+151;
     } else if (y >= windowHeight-150) {
@@ -26,8 +27,6 @@ function newLoc() {
     }
 
     //Get Left
-    var windowWidth=$(window).width(),
-        x = Math.floor((Math.random() * windowWidth) + 1);
     if (x <= 150){
         widthLoc=x+151;
     } else if (x >= windowWidth-150) {
