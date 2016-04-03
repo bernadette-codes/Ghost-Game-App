@@ -89,7 +89,6 @@ footer {
     color: #fff;
 }
 
-
 @media screen and (max-width: 550px) {
     .titleFont {
         font-size: 2em;
@@ -97,7 +96,6 @@ footer {
     .messageFont {
         font-size: 1em !important;
     }
-
 }
 
 @media screen and (max-width: 380px) {
@@ -107,5 +105,4 @@ footer {
     .titleFont {
         font-size: 1.8em;
     }
-
 }
