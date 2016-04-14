@@ -1,11 +1,31 @@
-/**
- * Created by Bernadette on 2/8/2016.
- */
-
 // Copyright Year
 var d = new Date(),
     n = d.getFullYear();
 document.getElementById("year").innerHTML = n;
+
+// Start Button
+function start(){
+    document.getElementById("startButton").style.visibility="hidden";
+    showGhost();
+
+    // Show Final Ghost
+    setTimeout(timer, 7000);
+    function timer() {
+        document.getElementById("ghost").style.display="none";
+        document.getElementById("ghostFinal").style.visibility="visible";
+    }
+}
+
+// Show Ghost
+function showGhost() {
+    setTimeout(next, 800);
+    function next() {
+        newLoc();
+        loc.style.top = heightLoc + "px";
+        loc.style.left = widthLoc + "px";
+        loc.style.visibility = "visible";
+    }
+}
 
 // Declare ghost
 var loc = document.getElementById("ghost");
@@ -33,29 +53,6 @@ function newLoc() {
         widthLoc=x-151;
     } else {
         widthLoc = x;
-    }
-}
-
-// Start Button
-function start(){
-    document.getElementById("startButton").style.visibility="hidden";
-    showGhost();
-
-    setTimeout(timer, 7000)
-    function timer() {
-        document.getElementById("ghost").style.display="none";
-        document.getElementById("ghostFinal").style.visibility="visible";
-    }
-}
-
-// Show Ghost
-function showGhost() {
-    setTimeout(next, 800);
-    function next() {
-        newLoc();
-        loc.style.top = heightLoc + "px";
-        loc.style.left = widthLoc + "px";
-        loc.style.visibility = "visible";
     }
 }
 
