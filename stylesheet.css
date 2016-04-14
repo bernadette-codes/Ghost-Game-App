@@ -89,6 +89,7 @@ footer {
     color: #fff;
 }
 
+
 @media screen and (max-width: 550px) {
     .titleFont {
         font-size: 2em;
