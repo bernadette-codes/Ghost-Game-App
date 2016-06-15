@@ -57,7 +57,7 @@ a:hover {
     cursor:pointer !important;
     border-radius: 15px;
     border: 1px solid #c5c5c5;
-    box-shadow: 2px 2px 2px #c5c5c5, -2px -2px 2px #c5c5c5;
+    box-shadow: 0 0 8px 2px #c5c5c5;
 }
 
 #area {
@@ -88,7 +88,6 @@ footer {
     width: 100%;
     color: #fff;
 }
-
 
 @media screen and (max-width: 550px) {
     .titleFont {
