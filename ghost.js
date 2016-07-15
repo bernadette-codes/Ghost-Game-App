@@ -1,116 +1,63 @@
-@charset "utf-8";
-/* CSS Document */
+// Copyright Year
+var d = new Date(),
+    n = d.getFullYear();
+document.getElementById("year").innerHTML = n;
 
-html {
-    position: relative;
-    min-height: 95%;
-}
+// Start Button
+function start(){
+    document.getElementById("startButton").style.visibility="hidden";
+    showGhost();
 
-body {
-    display: block;
-    background: url(background.jpg) center center / cover no-repeat fixed;
-    padding: 0;
-}
-
-/* Home Link & Reset */
-nav.navbar {
-    min-height: 32px;
-}
-
-a.navbar-brand {
-    font-size: 1.25em;
-    color: #fff;
-    background-color: #404040;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 7px;
-    border: 1px solid #404040;
-    height: 32px;
-}
-
-a.navbar-brand:hover {
-    color: #404040;
-    background-color: #fff;
-}
-
-/* Content */
-.area {
-    padding-bottom: 0;
-    margin: 0 0 10px;
-    cursor: crosshair;
-}
-
-/* Ghost Game Title */
-.titleFont {
-    font-size: 2.2em;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
-}
-
-/* Instruction */
-.messageFont {
-    font-size: 1.2em;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
-}
-
-#startButton {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 80px;
-    border-radius: 15px;
-    border: 1px solid #c5c5c5;
-    box-shadow: 0 0 8px 2px #c5c5c5;
-    cursor: pointer;
-}
-
-#ghost {
-    position: absolute;
-    width:30px;
-    opacity: 0.7;
-    visibility: hidden;
-}
-
-#ghostFinal {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -10px;
-    height: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    visibility: hidden;
-}
-
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 100%;
-    color: #fff;
-}
-
-@media screen and (max-width: 550px) {
-    /* Ghost Game Title */
-    .titleFont {
-        font-size: 2em;
-    }
-    /* Instruction */
-    .messageFont {
-        font-size: 1em;
+    // Show Final Ghost
+    setTimeout(timer, 16000);
+    function timer() {
+        document.getElementById("ghost").style.display="none";
+        document.getElementById("ghostFinal").style.visibility="visible";
     }
 }
 
-@media screen and (max-width: 380px) {
-    /* Home Link & Reset */
-    a.navbar-brand {
-        font-size: 1em;
+// Show Ghost
+function showGhost() {
+    setTimeout(next, 800);
+    function next() {
+        newLoc();
+        loc.style.top = heightLoc + "px";
+        loc.style.left = widthLoc + "px";
+        loc.style.visibility = "visible";
     }
-    /* Ghost Game Title */
-    .titleFont {
-        font-size: 1.8em;
+}
+
+// Declare ghost
+var loc = document.getElementById("ghost");
+
+// Get Ghost Location
+function newLoc() {
+    var windowHeight=$(window).height(),
+        y = Math.floor((Math.random() * windowHeight) + 1),
+        windowWidth=$(window).width(),
+        x = Math.floor((Math.random() * windowWidth) + 1);
+
+    //Get Top
+    if (y <= 150){
+        heightLoc=y+151;
+    } else if (y >= windowHeight-150) {
+        heightLoc=y-151;
+    } else {
+        heightLoc = y;
     }
+
+    //Get Left
+    if (x <= 150){
+        widthLoc=x+151;
+    } else if (x >= windowWidth-150) {
+        widthLoc=x-151;
+    } else {
+        widthLoc = x;
+    }
+}
+
+// Click Ghost
+function onClick() {
+    loc.style.visibility = "hidden";
+    showGhost();
 }
