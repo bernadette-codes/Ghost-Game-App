@@ -8,7 +8,7 @@ html {
 
 body {
     display: block;
-    background: url(background.jpg) center center / cover no-repeat fixed;
+    background: url(img/background.jpg) center center / cover no-repeat fixed;
     padding: 0;
 }
 
