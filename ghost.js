@@ -3,6 +3,9 @@ var d = new Date(),
     n = d.getFullYear();
 document.getElementById("year").innerHTML = n;
 
+// Declare ghost
+var loc = document.getElementById("ghost");
+
 // Start Button
 function start(){
     document.getElementById("startButton").style.visibility="hidden";
@@ -27,8 +30,11 @@ function showGhost() {
     }
 }
 
-// Declare ghost
-var loc = document.getElementById("ghost");
+// Click Ghost
+function onClick() {
+    loc.style.visibility = "hidden";
+    showGhost();
+}
 
 // Get Ghost Location
 function newLoc() {
@@ -54,10 +60,4 @@ function newLoc() {
     } else {
         widthLoc = x;
     }
-}
-
-// Click Ghost
-function onClick() {
-    loc.style.visibility = "hidden";
-    showGhost();
 }
