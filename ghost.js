@@ -22,6 +22,8 @@ function start(){
 // Show Ghost
 function showGhost() {
     setTimeout(next, 800);
+
+    // Get New Location
     function next() {
         newLoc();
         loc.style.top = heightLoc + "px";
@@ -43,7 +45,7 @@ function newLoc() {
         windowWidth=$(window).width(),
         x = Math.floor((Math.random() * windowWidth) + 1);
 
-    //Get Top
+    // Get Y Position
     if (y <= 150){
         heightLoc=y+151;
     } else if (y >= windowHeight-150) {
@@ -52,7 +54,7 @@ function newLoc() {
         heightLoc = y;
     }
 
-    //Get Left
+    // Get X Position
     if (x <= 150){
         widthLoc=x+151;
     } else if (x >= windowWidth-150) {
