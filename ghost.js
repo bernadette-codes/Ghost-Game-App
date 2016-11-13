@@ -8,14 +8,14 @@ var loc = document.getElementById("ghost");
 
 // Start Button
 function start(){
-    document.getElementById("startButton").style.visibility="hidden";
+    document.getElementById("startButton").style.visibility = "hidden";
     showGhost();
 
     // Show Final Ghost
     setTimeout(timer, 16000);
     function timer() {
-        document.getElementById("ghost").style.display="none";
-        document.getElementById("ghostFinal").style.visibility="visible";
+        document.getElementById("ghost").style.display = "none";
+        document.getElementById("ghostFinal").style.visibility = "visible";
     }
 }
 
@@ -40,25 +40,25 @@ function onClick() {
 
 // Get Ghost Location
 function newLoc() {
-    var windowHeight=$(window).height(),
+    var windowHeight = $(window).height(),
         y = Math.floor((Math.random() * windowHeight) + 1),
-        windowWidth=$(window).width(),
+        windowWidth = $(window).width(),
         x = Math.floor((Math.random() * windowWidth) + 1);
 
     // Get Y Position
     if (y <= 150){
-        heightLoc=y+151;
-    } else if (y >= windowHeight-150) {
-        heightLoc=y-151;
+        heightLoc = y + 151;
+    } else if (y >= windowHeight - 150) {
+        heightLoc = y - 151;
     } else {
         heightLoc = y;
     }
 
     // Get X Position
     if (x <= 150){
-        widthLoc=x+151;
-    } else if (x >= windowWidth-150) {
-        widthLoc=x-151;
+        widthLoc = x + 151;
+    } else if (x >= windowWidth - 150) {
+        widthLoc = x - 151;
     } else {
         widthLoc = x;
     }
