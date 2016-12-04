@@ -16,8 +16,8 @@ function start(){
     function timer() {
         document.getElementById("ghost").style.display = "none";
         document.getElementById("ghostFinal").style.visibility = "visible";
-    }
-}
+    } // end timer
+} // end start function
 
 // Show Ghost
 function showGhost() {
@@ -29,8 +29,8 @@ function showGhost() {
         loc.style.top = heightLoc + "px";
         loc.style.left = widthLoc + "px";
         loc.style.visibility = "visible";
-    }
-}
+    } // end next
+} // end showGhost function
 
 // Click Ghost
 function onClick() {
@@ -62,4 +62,4 @@ function newLoc() {
     } else {
         widthLoc = x;
     }
-}
+} // end newLoc function
