@@ -3,63 +3,69 @@ var d = new Date(),
     n = d.getFullYear();
 document.getElementById("year").innerHTML = n;
 
-// Declare ghost
-var loc = document.getElementById("ghost");
+// Page 2 - Get Modal
+var kingDelmodal = document.getElementById('kingDeluxeModal'),
+    kingmodal = document.getElementById('kingModal'),
+    queenmodal = document.getElementById('queenModal'),
+    twoQueenmodal = document.getElementById('twoQueenModal'),
 
-// Start Button
-function start(){
-    document.getElementById("startButton").style.visibility = "hidden";
-    showGhost();
+// Page 2 - Get Link that Opens the Modal
+    kingDelRoom = document.getElementById("kingDel"),
+    kingBedRoom = document.getElementById("kingBed"),
+    queenBedRoom = document.getElementById("queenBed"),
+    twoQueenRoom = document.getElementById("twoQueen"),
 
-    // Show Final Ghost
-    setTimeout(timer, 16000);
-    function timer() {
-        loc.style.display = "none";
-        document.getElementById("ghostFinal").style.visibility = "visible";
-    } // end timer
-} // end start function
+// Page 2 - Get Span that Closes the Modal
+    span1 = document.getElementsByClassName("close1")[0],
+    span2 = document.getElementsByClassName("close2")[0],
+    span3 = document.getElementsByClassName("close3")[0],
+    span4 = document.getElementsByClassName("close4")[0],
 
-// Show Ghost
-function showGhost() {
-    setTimeout(next, 800);
+// Page 2 - Main Section
+    blur = document.getElementById("blur");
 
-    // Get New Location
-    function next() {
-        newLoc();
-        loc.style.top = heightLoc + "px";
-        loc.style.left = widthLoc + "px";
-        loc.style.visibility = "visible";
-    } // end next
-} // end showGhost function
+// Page 2 - Open Modal when Link is Clicked
+function openModal(roomType, roomModal) {
+    roomType.onclick = function() {
+        blur.style.opacity = "0.3";
+        roomModal.style.display = "block";
+    };
+} // end openModal
 
-// Click Ghost
-function onClick() {
-    loc.style.visibility = "hidden";
-    showGhost();
+// Page 2 - Close Modal when X is Clicked
+function closeModal(spanNum, roomModal){
+    spanNum.onclick = function() {
+        blur.style.opacity = "1";
+        roomModal.style.display = "none";
+    };
+} // end closeModal
+
+// Page 2 - Close Modal when Clicked Anywhere
+function closeModal2(xModal){
+    blur.style.opacity = "1";
+    xModal.style.display = "none";
 }
 
-// Get Ghost Location
-function newLoc() {
-    var windowHeight = $(window).height(),
-        y = Math.floor((Math.random() * windowHeight) + 1),
-        windowWidth = $(window).width(),
-        x = Math.floor((Math.random() * windowWidth) + 1);
-
-    // Get Y Position
-    if (y <= 150){
-        heightLoc = y + 151;
-    } else if (y >= windowHeight - 150) {
-        heightLoc = y - 151;
-    } else {
-        heightLoc = y;
+window.onclick = function(event) {
+    if (event.target == kingDelmodal) {
+        closeModal2(kingDelmodal);
+    } else if (event.target == kingmodal) {
+        closeModal2(kingmodal);
+    } else if (event.target == queenmodal) {
+        closeModal2(queenmodal);
+    } else if (event.target == twoQueenmodal) {
+        closeModal2(twoQueenmodal);
     }
+}; // end onclick
 
-    // Get X Position
-    if (x <= 150){
-        widthLoc = x + 151;
-    } else if (x >= windowWidth - 150) {
-        widthLoc = x - 151;
-    } else {
-        widthLoc = x;
-    }
-} // end newLoc function
+// Page 2 - Open Modal
+openModal(kingDelRoom, kingDelmodal);
+openModal(kingBedRoom, kingmodal);
+openModal(queenBedRoom, queenmodal);
+openModal(twoQueenRoom, twoQueenmodal);
+
+// Page 2 - Close Modal
+closeModal(span1, kingDelmodal);
+closeModal(span2, kingmodal);
+closeModal(span3, queenmodal);
+closeModal(span4, twoQueenmodal);
