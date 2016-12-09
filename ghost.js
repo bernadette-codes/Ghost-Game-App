@@ -14,7 +14,7 @@ function start(){
     // Show Final Ghost
     setTimeout(timer, 16000);
     function timer() {
-        document.getElementById("ghost").style.display = "none";
+        loc.style.display = "none";
         document.getElementById("ghostFinal").style.visibility = "visible";
     } // end timer
 } // end start function
