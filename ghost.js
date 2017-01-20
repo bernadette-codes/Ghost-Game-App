@@ -4,17 +4,17 @@ var d = new Date(),
 document.getElementById("year").innerHTML = n;
 
 // Declare ghost
-var loc = document.getElementById("ghost");
+var $loc = $("#ghost");
 
 // Start Button
 function start(){
-    document.getElementById("startButton").style.visibility = "hidden";
+    $("#startButton").css("visibility", "hidden");
     showGhost();
 
     // Show Final Ghost
     setTimeout(timer, 16000);
     function timer() {
-        loc.style.display = "none";
+        document.getElementById("ghost").style.display = "none";
         document.getElementById("ghostFinal").style.visibility = "visible";
     } // end timer
 } // end start function
@@ -26,15 +26,15 @@ function showGhost() {
     // Get New Location
     function next() {
         newLoc();
-        loc.style.top = heightLoc + "px";
-        loc.style.left = widthLoc + "px";
-        loc.style.visibility = "visible";
+        $loc.css("top", heightLoc + "px");
+        $loc.css("left", widthLoc + "px");
+        $loc.css("visibility", "visible");
     } // end next
 } // end showGhost function
 
 // Click Ghost
 function onClick() {
-    loc.style.visibility = "hidden";
+    $loc.css("visibility", "hidden");
     showGhost();
 }
 
