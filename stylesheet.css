@@ -1,114 +1,448 @@
 @charset "utf-8";
 /* CSS Document */
 
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body{
+	min-height: 100%;
+}
+
 html {
-    position: relative;
-    min-height: 95%;
+	position: relative;
 }
 
 body {
     display: block;
-    background: url(img/background.jpg) center center / cover no-repeat fixed;
-    padding: 0;
+	padding: 0 0 100px;
 }
 
-/* Home Link & Reset */
-nav.navbar {
-    min-height: 32px;
+/* Header */
+h1 {
+	position: absolute;
+	text-indent: -3000px;
 }
 
-a.navbar-brand {
-    font-size: 1.25em;
-    color: #fff;
-    background-color: #404040;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 7px;
-    border: 1px solid #404040;
-    height: 32px;
+/* Brand Image */
+.brandimg {
+	display: block;
+	margin: 10px auto;
 }
 
-a.navbar-brand:hover {
-    color: #404040;
-    background-color: #fff;
+/* Nav bar */
+nav#navbarbtn {
+	background: #fff;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-bottom: 3px solid #BEBEBE;
 }
 
-/* Content */
-.area {
-    padding-bottom: 0;
-    margin: 0 0 10px;
-    cursor: crosshair;
+nav#navbarbtn ul {
+	display: block;
+	width: 50%;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
 }
 
-/* Ghost Game Title */
-.titleFont {
-    font-size: 2.2em;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
+nav#navbarbtn ul li {
+	width: 22%;
+	float: left;
+	list-style: none;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
-/* Instruction */
-.messageFont {
-    font-size: 1.2em;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
+nav#navbarbtn ul li:nth-child(3),
+nav#navbarbtn ul li:nth-child(4){
+	width: 28%;
 }
 
-#startButton {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    border-radius: 15px;
-    border: 1px solid #c5c5c5;
-    box-shadow: 0 0 8px 2px #c5c5c5;
-    cursor: pointer;
+nav#navbarbtn ul a {
+	font-size: 20px;
+	font-weight: 600;
+	font-family: Arial, Tahoma, sans-serif;
+	color: #5f5f5f;
+	padding: 5px 15px;
 }
 
-#ghost {
-    position: absolute;
-    opacity: 0.7;
-    visibility: hidden;
+nav#navbarbtn ul a:hover,
+nav#navbarbtn ul a:focus {
+	color: #FFFFFF; 
+	background-color: #BEBEBE;
 }
 
-#ghostFinal {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -10px;
-    height: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    visibility: hidden;
+
+
+
+
+
+/* Homepage Slideshow Photos */
+
+
+main.slideshow {
+	position: relative;
+	width: 400px;
+	height: 250px;
+	margin: 8% auto 4%;
+	perspective: 1000px;
+	-webkit-perspective: 1000px;
 }
 
+#carousel {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	transform-style: preserve-3d;
+	animation: rotation 25s infinite linear;
+}
+
+#carousel:hover {
+	animation-play-state: paused;
+}
+
+#carousel figure {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border: solid 5px #BEBEBE;
+}
+
+#carousel figure:nth-child(1) { transform: rotateY(0deg) translateZ(288px); }
+#carousel figure:nth-child(2) { transform: rotateY(72deg) translateZ(288px); }
+#carousel figure:nth-child(3) { transform: rotateY(144deg) translateZ(288px); }
+#carousel figure:nth-child(4) { transform: rotateY(216deg) translateZ(288px); }
+#carousel figure:nth-child(5) { transform: rotateY(288deg) translateZ(288px); }
+
+@keyframes rotation {
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(360deg); }
+}
+
+figure img {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+
+/* All Pages */
+.background {
+	height: auto;
+	background-color: #e5e5e5;
+	padding-top: 30px;
+	padding-bottom: 30px;
+ }
+
+.details {
+	font-size: 18px;
+}
+
+.indent {
+	text-indent: 100px;
+}
+
+
+
+/* Salon */
+.about {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	text-indent: 50px;
+	text-align: justify;
+	padding: 20px 10%;
+
+}
+
+/* Services */
+.servicesphoto {
+	width: 80%;
+	padding-top: 10%;
+	padding-left: 10%; 	
+}
+
+.services {
+	font-size: 1.3em;
+}
+
+.services li {
+	display: block;
+	line-height: 30px; 
+	border-bottom: thin solid #B0B0B0;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.prices {
+	font-size: 0.8em;
+	float: right;
+	padding-right: 20px;
+}
+
+/* Hairstyle */
+#slider {
+	margin: 20px 0 25px;
+}
+
+#myCarousel {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.hide-bullets {
+	list-style: none;
+	margin-left: -40px;
+	margin-top: 20px;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail img, .active.item img {
+	border-radius: 3px;
+}
+
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+	width: 100%;
+}
+
+/* Footer */
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 100%;
-    color: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	padding-top: 20px;
 }
+
+.salonName {
+	font-size: large;
+	margin-bottom: 3px;
+}
+
+address {
+	font-size: medium;
+	margin-bottom: 5px;
+}
+
+footer p a,
+footer p a:visited,
+footer p a:active {
+	color: #303030;
+	text-decoration: none;
+}
+
+footer p a:hover {
+	text-decoration: underline;
+	color: #303030;
+}
+
+
+/***** Media Queries *****/
+@media screen and (max-width: 1199px) {
+	.brandimg {
+		width: 220px;
+	}
+	nav#navbarbtn ul {
+		width: 60%;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 10% auto 3%;
+	}
+}
+@media screen and (max-width: 991px) {
+	nav#navbarbtn ul {
+		width: 70%;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 12% auto 2%;
+		width: 580px;
+		height: 235px;
+	}
+	#carousel {
+		width: 70%;
+		left: 15%;
+	}
+}
+@media screen and (max-width: 879px) {
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 14% auto 2%;
+		width: 660px;
+	}
+	#carousel {
+		width: 60%;
+		left: 19%;
+	}
+
+}
+@media screen and (max-width: 767px) {
+	.brandimg {
+		width: 200px;
+	}
+	nav#navbarbtn ul {
+		width: 80%;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 18% 1% 2%;
+	}
+}
+@media screen and (max-width: 668px) {
+	nav#navbarbtn ul {
+		width: 90%;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 20% auto 0;
+		width: 580px;
+		height: 200px;
+	}
+}
+@media screen and (max-width: 600px) {
+	nav#navbarbtn ul {
+		width: 95%;
+	}
+	nav#navbarbtn ul a {
+		padding: 5px 10px;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 22% auto 0;
+		width: 280px;
+		height: 175px;
+	}
+}
+@media screen and (max-width: 550px) {
+	.brandimg {
+		width: 180px;
+	}
+	nav#navbarbtn ul {
+		width: 100%;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 22% auto 0;
+		width: 200px;
+		height: 125px;
+	}
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 450px) {
+	nav#navbarbtn ul a {
+		font-size: 18px;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 25% auto 0;
+		width: 140px;
+		height: 90px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.brandimg {
+		width: 160px;
+	}
+	nav#navbarbtn ul a {
+		font-size: 16px;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 28% auto 0;
+		width: 140px;
+		height: 90px;
+	}
+	footer address {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 350px) {
+	nav#navbarbtn ul a {
+		font-size: 14px;
+	}
+	footer p {
+		font-size: 12px;
+	}
+	/* Homepage Slideshow*/
+	main.slideshow {
+		margin: 65% auto 0;
+		width: 120px;
+		height: 75px;
+	}
+}
+
+
+
+
+/***** Media Queries *****/
+
+@media screen and (max-width: 991px) {
+
+}
+@media screen and (max-width: 767px) {
+	.about {
+		font-size: 1.2em;
+		padding-left: 7%;
+		padding-right: 7%;
+	}
+}
+
 
 @media screen and (max-width: 550px) {
-    /* Ghost Game Title */
-    .titleFont {
-        font-size: 2em;
-    }
-    /* Instruction */
-    .messageFont {
-        font-size: 1em;
-    }
+	.about {
+		font-size: 1.1em;
+	}
+	.background h3 {
+		font-size: 20px;
+	}
+	.background h4 {
+		font-size: 18px;
+	}
+}
+@media screen and (max-width: 450px) {
+
+	#carousel figure {
+		border-width: 2px;
+	}
+	.about {
+		font-size: 1em;
+	}
+	.background h3 {
+		font-size: 18px;
+	}
+	.background h4 {
+		font-size: 16px;
+	}
 }
 
-@media screen and (max-width: 380px) {
-    /* Home Link & Reset */
-    a.navbar-brand {
-        font-size: 1em;
-    }
-    /* Ghost Game Title */
-    .titleFont {
-        font-size: 1.8em;
-    }
+@media screen and (max-width: 350px) {
+	.about {
+		font-size: 0.9em;
+	}
+	.background h3 {
+		font-size: 16px;
+	}
+	.background h4 {
+		font-size: 14px;
+	}
 }
