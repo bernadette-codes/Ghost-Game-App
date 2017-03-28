@@ -6,19 +6,6 @@ document.getElementById("year").innerHTML = n;
 // Declare ghost
 var $loc = $("#ghost");
 
-// Start Button
-function start(){
-    $("#startButton").css("visibility", "hidden");
-    showGhost();
-
-    // Show Final Ghost
-    setTimeout(timer, 16000);
-    function timer() {
-        document.getElementById("ghost").style.display = "none";
-        document.getElementById("ghostFinal").style.visibility = "visible";
-    } // end timer
-} // end start function
-
 // Show Ghost
 function showGhost() {
     setTimeout(next, 800);
@@ -33,7 +20,7 @@ function showGhost() {
 } // end showGhost function
 
 // Click Ghost
-function onClick() {
+function clickGhost() {
     $loc.css("visibility", "hidden");
     showGhost();
 }
@@ -63,3 +50,23 @@ function newLoc() {
         widthLoc = x;
     }
 } // end newLoc function
+
+$(document).ready(function(){
+
+// Start Button
+    $("#startButton").on('click', function(){
+        $(this).remove();
+        showGhost();
+
+        // Show Final Ghost
+        setTimeout(timer, 16000);
+        function timer() {
+            $($loc).css('display', 'none');
+            $('#ghostFinal').css('visibility', 'visible');
+        } // end timer
+    });
+
+    $($loc).on('click', function(){
+        clickGhost();
+    });
+});
