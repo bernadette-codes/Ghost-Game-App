@@ -6,7 +6,7 @@ The objective of [Find the Ghost Game](http://www.bernadetteengleman.com/Apps/Gh
 
 ![Find the Ghost Game](http://www.bernadetteengleman.com/img/portfolio/ghostthumbnail2.jpg)
 
- - 	Find the Ghost game is a single-page, responsive web application programmed with JavaScript.
+ - Find the Ghost game is a single-page, responsive web application programmed with JavaScript and jQuery.
  - It utilizes CSS3 Animation and jQuery UI.
 
 **Front-End:**
